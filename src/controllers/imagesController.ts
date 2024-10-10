@@ -10,7 +10,9 @@ interface CloudinaryResource {
   secure_url: string;
 }
 
-// GET GALERÍA
+
+//  -  GET GALERÍA
+
 export const getAllImages = async (req: Request, res: Response) => {
   try {
     const result = await cloudinary.api.resources({
@@ -31,7 +33,8 @@ export const getAllImages = async (req: Request, res: Response) => {
   }
 };
 
-// POST UPLOAD
+//  -  POST UPLOAD
+
 export const uploadImage = async (req: MulterRequest, res: Response) => {
   if (!req.file) {
     res.status(400).json({ error: "No hay archivo a subir!" });
